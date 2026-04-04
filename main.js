@@ -99,7 +99,7 @@ async function renderGames(){
   renderSection("All Games", dynamicGames, true);
 }
 
-function renderSection(title, games, isAll=false){
+function renderSection(title, games){
   let container;
 
   if(title === "Trending Games"){
@@ -130,6 +130,5 @@ function renderSection(title, games, isAll=false){
     grid.appendChild(card);
   });
 }
-
 // Init
 renderGames();
