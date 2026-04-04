@@ -109,17 +109,17 @@ const gamesData = [
 ];
 
 // Render sections
-async function renderGames(){
-  const dynamicGames = await getDynamicGames();
+// async function renderGames(){
+//  const dynamicGames = await getDynamicGames();
 
   // Trending + New
-  const trending = dynamicGames.slice(0,5);
-  const newGames = dynamicGames.slice(-5);
+//  const trending = dynamicGames.slice(0,5);
+//  const newGames = dynamicGames.slice(-5);
 
-  renderSection("Trending Games", trending);
-  renderSection("New Games", newGames);
-  renderSection("All Games", dynamicGames, true);
-}
+//  renderSection("Trending Games", trending);
+//  renderSection("New Games", newGames);
+//  renderSection("All Games", dynamicGames, true);
+//}
 
 function renderGames(){
   console.log("Rendering local games...");
