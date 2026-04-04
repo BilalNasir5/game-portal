@@ -121,7 +121,7 @@ function renderGames(){
   renderSection("New Games", newGames);
   renderSection("All Games", gamesData);
 
-
+}
 function renderSection(title, games){
   let container;
 
