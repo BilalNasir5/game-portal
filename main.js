@@ -141,7 +141,7 @@ function renderGames(){
     `;
     grid.appendChild(card);
   });
-}
+
 function renderSection(title, games){
   let container;
 
