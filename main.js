@@ -140,7 +140,6 @@ function renderSection(title, games){
     const card = document.createElement("div");
     card.className="card";
     card.dataset.category=game.category;
-  }
     const isFav = favorites.includes(game.title) ? "⭐":""; 
 
     card.innerHTML = `
