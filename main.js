@@ -141,7 +141,8 @@ function renderGames(){
     `;
     grid.appendChild(card);
   });
-}function renderSection(title, games){
+}
+function renderSection(title, games){
   let container;
 
   if(title === "Trending Games"){
