@@ -1,4 +1,4 @@
-import { auth, provider, signInWithPopup, db, doc, getDoc, setDoc } from ".firebaseConfig.js";
+import { auth, provider, signInWithPopup, db, doc, getDoc, setDoc } from "./firebaseConfig.js";
 
 let currentUser = null;
 
