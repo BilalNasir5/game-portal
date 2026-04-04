@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Pro Game Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark">
+
+<header>
+  <div class="header-content">
+    <h1>🎮 Pro Game Portal</h1>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search games..." onkeyup="searchGames()">
+      <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+      <button id="authBtn" onclick="authWithGoogle()">Login</button>
+    </div>
+  </div>
+</header>
+
+<div class="filters" id="categoryFilters">
+  <button onclick="filterGames('all')">All</button>
+  <button onclick="filterGames('shooter')">Shooter</button>
+  <button onclick="filterGames('strategy')">Strategy</button>
+  <button onclick="filterGames('rpg')">RPG</button>
+</div>
+
+<section id="trendingSection"></section>
+<section id="newSection"></section>
+<section id="gameGrid"></section>
+
+<!-- Fullscreen Player -->
+<div class="player" id="player">
+  <span class="close" onclick="closePlayer()">✖</span>
+  <iframe id="frame"></iframe>
+</div>
+
+<script type="module" src="js/firebaseConfig.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
