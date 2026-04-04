@@ -120,9 +120,9 @@ function renderGames(){
   renderSection("Trending Games", trending);
   renderSection("New Games", newGames);
   renderSection("All Games", gamesData);
-}
 
- function renderSection(title, games){
+
+function renderSection(title, games){
   let container;
 
   if(title === "Trending Games"){
@@ -140,7 +140,7 @@ function renderGames(){
     const card = document.createElement("div");
     card.className="card";
     card.dataset.category=game.category;
-  }
+
     const isFav = favorites.includes(game.title) ? "⭐":""; 
 
     card.innerHTML = `
