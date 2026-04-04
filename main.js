@@ -141,6 +141,36 @@ function renderGames(){
     `;
     grid.appendChild(card);
   });
+}function renderSection(title, games){
+  let container;
+
+  if(title === "Trending Games"){
+    container = document.getElementById("trendingSection");
+  } else if(title === "New Games"){
+    container = document.getElementById("newSection");
+  } else {
+    container = document.getElementById("gameGrid");
+  }
+
+  container.innerHTML = `<h2>${title}</h2><div class="grid"></div>`;
+  const grid = container.querySelector(".grid");
+
+  games.forEach(game=>{
+    const card = document.createElement("div");
+    card.className="card";
+    card.dataset.category=game.category;
+
+    const isFav = favorites.includes(game.title) ? "⭐":""; 
+
+    card.innerHTML = `
+      <img src="${game.thumb}">
+      <span class="category">${game.category}</span>
+      <h3>${game.title} ${isFav}</h3>
+      <button class="btn" onclick="playGame('${game.url}')">▶ Play</button>
+      <button class="btn" onclick="toggleFav(${JSON.stringify(game)})">⭐ Fav</button>
+    `;
+    grid.appendChild(card);
+  });
 }
 
 // Init
