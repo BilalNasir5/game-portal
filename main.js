@@ -131,5 +131,6 @@ function renderSection(title, games){
     grid.appendChild(card);
   });
 }
+console.log("Fetching games...");
 // Init
 renderGames();
