@@ -71,14 +71,19 @@ window.closePlayer = closePlayer;
 
 // Dynamic games from API
 async function getDynamicGames(){
-  const res = await fetch("https://www.freetogame.com/api/games");
-  const games = await res.json();
-  return games.slice(0, 20).map(g => ({
-    title: g.title,
-    category: g.genre.toLowerCase(),
-    thumb: g.thumbnail,
-    url: g.game_url
-  }));
+  try {
+    const res = await fetch("https://www.freetogame.com/api/games");
+    const games = await res.json();
+    return games.slice(0, 20).map(g => ({
+      title: g.title,
+      category: g.genre.toLowerCase(),
+      thumb: g.thumbnail,
+      url: g.game_url
+    }));
+  } catch (e) {
+    console.error("API Error:", e);
+    return [];
+  }
 }
 
 // Render sections
