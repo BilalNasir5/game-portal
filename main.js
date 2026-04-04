@@ -94,8 +94,17 @@ async function renderGames(){
   renderSection("All Games", dynamicGames, true);
 }
 
-function renderSection(title, games, showAll=false){
-  const container = document.getElementById(title.replace(" ","")+"Section") || document.getElementById("gameGrid");
+function renderSection(title, games, isAll=false){
+  let container;
+
+  if(title === "Trending Games"){
+    container = document.getElementById("trendingSection");
+  } else if(title === "New Games"){
+    container = document.getElementById("newSection");
+  } else {
+    container = document.getElementById("gameGrid");
+  }
+
   container.innerHTML = `<h2>${title}</h2><div class="grid"></div>`;
   const grid = container.querySelector(".grid");
 
