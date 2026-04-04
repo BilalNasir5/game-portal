@@ -69,43 +69,45 @@ function closePlayer(){
 }
 window.closePlayer = closePlayer;
 
-// Dynamic games from API
-async function getDynamicGames(){
-  console.log("Using local games data...");
+const gamesData = [
+  {
+    title: "Warframe",
+    category: "shooter",
+    thumb: "https://www.freetogame.com/g/1/thumbnail.jpg",
+    url: "https://www.freetogame.com/open/warframe"
+  },
+  {
+    title: "Forge of Empires",
+    category: "strategy",
+    thumb: "https://www.freetogame.com/g/2/thumbnail.jpg",
+    url: "https://www.freetogame.com/open/forge-of-empires"
+  },
+  {
+    title: "Runescape",
+    category: "rpg",
+    thumb: "https://www.freetogame.com/g/3/thumbnail.jpg",
+    url: "https://www.freetogame.com/open/runescape"
+  },
+  {
+    title: "Crossout",
+    category: "shooter",
+    thumb: "https://www.freetogame.com/g/4/thumbnail.jpg",
+    url: "https://www.freetogame.com/open/crossout"
+  },
+  {
+    title: "Albion Online",
+    category: "rpg",
+    thumb: "https://www.freetogame.com/g/5/thumbnail.jpg",
+    url: "https://www.freetogame.com/open/albion-online"
+  },
+  {
+    title: "World of Tanks",
+    category: "strategy",
+    thumb: "https://www.freetogame.com/g/6/thumbnail.jpg",
+    url: "https://www.freetogame.com/open/world-of-tanks"
+  }
+];
 
-  return [
-    {
-      title: "Warframe",
-      category: "shooter",
-      thumb: "https://www.freetogame.com/g/1/thumbnail.jpg",
-      url: "https://www.freetogame.com/open/warframe"
-    },
-    {
-      title: "Forge of Empires",
-      category: "strategy",
-      thumb: "https://www.freetogame.com/g/2/thumbnail.jpg",
-      url: "https://www.freetogame.com/open/forge-of-empires"
-    },
-    {
-      title: "Runescape",
-      category: "rpg",
-      thumb: "https://www.freetogame.com/g/3/thumbnail.jpg",
-      url: "https://www.freetogame.com/open/runescape"
-    },
-    {
-      title: "Crossout",
-      category: "shooter",
-      thumb: "https://www.freetogame.com/g/4/thumbnail.jpg",
-      url: "https://www.freetogame.com/open/crossout"
-    },
-    {
-      title: "Albion Online",
-      category: "rpg",
-      thumb: "https://www.freetogame.com/g/5/thumbnail.jpg",
-      url: "https://www.freetogame.com/open/albion-online"
-    }
-  ];
-}
 // Render sections
 async function renderGames(){
   const dynamicGames = await getDynamicGames();
@@ -119,16 +121,16 @@ async function renderGames(){
   renderSection("All Games", dynamicGames, true);
 }
 
-function renderSection(title, games){
-  let container;
+function renderGames(){
+  console.log("Rendering local games...");
 
-  if(title === "Trending Games"){
-    container = document.getElementById("trendingSection");
-  } else if(title === "New Games"){
-    container = document.getElementById("newSection");
-  } else {
-    container = document.getElementById("gameGrid");
-  }
+  const trending = gamesData.slice(0, 3);
+  const newGames = gamesData.slice(3);
+
+  renderSection("Trending Games", trending);
+  renderSection("New Games", newGames);
+  renderSection("All Games", gamesData);
+}
 
   container.innerHTML = `<h2>${title}</h2><div class="grid"></div>`;
   const grid = container.querySelector(".grid");
