@@ -72,7 +72,7 @@ window.closePlayer = closePlayer;
 // Dynamic games from API
 async function getDynamicGames(){
   try {
-    const res = await fetch("https://api.allorigins.win/raw?url=https://www.freetogame.com/api/games");
+    const res = await fetch("https://corsproxy.io/?https://www.freetogame.com/api/games");
     const games = await res.json();
 
     return games.slice(0, 20).map(g => ({
@@ -81,12 +81,12 @@ async function getDynamicGames(){
       thumb: g.thumbnail,
       url: g.game_url
     }));
+
   } catch (e) {
     console.error("API Error:", e);
     return [];
   }
 }
-
 // Render sections
 async function renderGames(){
   const dynamicGames = await getDynamicGames();
