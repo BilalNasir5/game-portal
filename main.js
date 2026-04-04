@@ -70,7 +70,8 @@ function closePlayer(){
 window.closePlayer = closePlayer;
 
 // Dynamic games from API
-async function getDynamicGames(){
+async function getDynamicGames(){ 
+  console.log("Fetching games...");
   try {
    const res = await fetch("https://api.allorigins.win/raw?url=https://www.freetogame.com/api/games");
     const games = await res.json();
@@ -131,6 +132,6 @@ function renderSection(title, games){
     grid.appendChild(card);
   });
 }
-console.log("Fetching games...");
+
 // Init
 renderGames();
