@@ -88,7 +88,7 @@ const gamesData = [
     thumb: "https://picsum.photos/400/200?random=5",
     url: "https://itch.io/embed/1031090",
     type: "embed"
-  }
+  },
   {
     title: "2048 Game",
     category: "strategy",
