@@ -58,14 +58,12 @@ async function toggleFav(game){
 
 // Fullscreen play
 function playGame(index){
+  console.log("Play clicked", index);
+
   const game = gamesData[index];
 
-  if(game.type === "embed"){
-    document.getElementById("player").style.display = "block";
-    document.getElementById("frame").src = game.url;
-  } else {
-    window.open(game.url, "_blank");
-  }
+  document.getElementById("player").style.display = "block";
+  document.getElementById("frame").src = "https://itch.io/embed/182406";
 }
 window.playGame = playGame;
 
@@ -132,8 +130,7 @@ function renderSection(title, games){
       <img src="${game.thumb}">
       <span class="category">${game.category}</span>
       <h3>${game.title} ${isFav}</h3>
-    
-      <button class="btn" onclick="playGame(${index})">▶ Play</button>
+    <button class="btn" onclick="playGame(0)">▶ Play</button>
       <button class="btn" onclick="toggleFav(${JSON.stringify(game)})">⭐ Fav</button>
     `;
     grid.appendChild(card);
