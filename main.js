@@ -72,7 +72,7 @@ const gamesData = [
     title: "Friday Night Funkin",
     category: "rpg",
     thumb: "https://img.itch.zone/aW1nLzQyOTY1NDYucG5n/original/8Q%2B6FZ.png",
-    url: "https://itch.io/embed/833937",
+    url: "https://itch.io/embed/622466",
     type: "embed"
   },
   {
