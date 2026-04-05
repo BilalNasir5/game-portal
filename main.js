@@ -76,7 +76,7 @@ const gamesData = [
   },
   {
     title: "Tetris",
-    category: "strategy",
+    category: "shooter",
     thumb: "https://picsum.photos/400/200?random=2",
     url: "https://tetris.com/play-tetris",
     type: "external"
