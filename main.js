@@ -57,8 +57,13 @@ async function toggleFav(game){
 }
 
 // Fullscreen play
-function playGame(url){
-  window.open(url, "_blank");
+function playGame(game){
+  if(game.type === "embed"){
+    document.getElementById("player").style.display = "block";
+    document.getElementById("frame").src = game.url;
+  } else {
+    window.open(game.url, "_blank");
+  }
 }
 window.playGame = playGame;
 
@@ -66,43 +71,27 @@ window.playGame = playGame;
 
 const gamesData = [
   {
-    title: "Warframe",
+    title: "Space Shooter",
     category: "shooter",
-    thumb: "https://www.freetogame.com/g/1/thumbnail.jpg",
-    url: "https://www.freetogame.com/open/warframe"
+    thumb: "https://img.itch.zone/aW1nLzE2NDg5NzQucG5n/original/xyz.png",
+    url: "https://itch.io/embed/182406",
+    type: "embed"
   },
   {
-    title: "Forge of Empires",
-    category: "strategy",
-    thumb: "https://www.freetogame.com/g/2/thumbnail.jpg",
-    url: "https://www.freetogame.com/open/forge-of-empires"
+    title: "Pixel Racing",
+    category: "racing",
+    thumb: "https://img.itch.zone/aW1nLzE2NDg5NzUucG5n/original/abc.png",
+    url: "https://itch.io/embed/261560",
+    type: "embed"
   },
   {
-    title: "Runescape",
+    title: "Dungeon RPG",
     category: "rpg",
-    thumb: "https://www.freetogame.com/g/3/thumbnail.jpg",
-    url: "https://www.freetogame.com/open/runescape"
-  },
-  {
-    title: "Crossout",
-    category: "shooter",
-    thumb: "https://www.freetogame.com/g/4/thumbnail.jpg",
-    url: "https://www.freetogame.com/open/crossout"
-  },
-  {
-    title: "Albion Online",
-    category: "rpg",
-    thumb: "https://www.freetogame.com/g/5/thumbnail.jpg",
-    url: "https://www.freetogame.com/open/albion-online"
-  },
-  {
-    title: "World of Tanks",
-    category: "strategy",
-    thumb: "https://www.freetogame.com/g/6/thumbnail.jpg",
-    url: "https://www.freetogame.com/open/world-of-tanks"
+    thumb: "https://img.itch.zone/aW1nLzE2NDg5NzYucG5n/original/def.png",
+    url: "https://itch.io/embed/307222",
+    type: "embed"
   }
 ];
-
 // Render sections
 
 
@@ -141,7 +130,7 @@ function renderSection(title, games){
       <img src="${game.thumb}">
       <span class="category">${game.category}</span>
       <h3>${game.title} ${isFav}</h3>
-    <button class="btn" onclick="window.open('${game.url}', '_blank')">▶ Play</button>
+    <button class="btn" onclick="playGame(${JSON.stringify(game)})">▶ Play</button>
       <button class="btn" onclick="toggleFav(${JSON.stringify(game)})">⭐ Fav</button>
     `;
     grid.appendChild(card);
