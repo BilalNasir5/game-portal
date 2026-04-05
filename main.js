@@ -58,16 +58,15 @@ async function toggleFav(game){
 
 // Fullscreen play
 function playGame(url){
-  document.getElementById("player").style.display = "block";
-  document.getElementById("frame").src = url;
+  window.open(url, "_blank");
 }
 window.playGame = playGame;
 
-function closePlayer(){
+//function closePlayer(){
   document.getElementById("player").style.display="none";
   document.getElementById("frame").src="";
 }
-window.closePlayer = closePlayer;
+//window.closePlayer = closePlayer;
 
 const gamesData = [
   {
