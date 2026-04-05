@@ -58,12 +58,10 @@ async function toggleFav(game){
 
 // Fullscreen play
 function playGame(index){
-  console.log("Play clicked", index);
-
   const game = gamesData[index];
 
   document.getElementById("player").style.display = "block";
-  document.getElementById("frame").src = "https://itch.io/embed/182406";
+  document.getElementById("frame").src = game.url;
 }
 window.playGame = playGame;
 
@@ -90,11 +88,11 @@ const gamesData = [
     type: "embed"
   },
   {
-    title: "2048 Game",
+    title: "Crossword-Puzzle-Game",
     category: "strategy",
     thumb: "https://picsum.photos/400/200?random=1",
-    url: "https://play2048.co/",
-    type: "embed"
+    url: "Crossword-Puzzle-Game/index.html",
+    type: "local"
   },
   {
     title: "Tetris",
