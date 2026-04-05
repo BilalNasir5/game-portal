@@ -57,7 +57,9 @@ async function toggleFav(game){
 }
 
 // Fullscreen play
-function playGame(game){
+function playGame(index){
+  const game = gamesData[index];
+
   if(game.type === "embed"){
     document.getElementById("player").style.display = "block";
     document.getElementById("frame").src = game.url;
@@ -73,21 +75,21 @@ const gamesData = [
   {
     title: "Space Shooter",
     category: "shooter",
-    thumb: "https://img.itch.zone/aW1nLzE2NDg5NzQucG5n/original/xyz.png",
+    thumb: "https://picsum.photos/400/200?random=1",
     url: "https://itch.io/embed/182406",
     type: "embed"
   },
   {
     title: "Pixel Racing",
     category: "racing",
-    thumb: "https://img.itch.zone/aW1nLzE2NDg5NzUucG5n/original/abc.png",
+    thumb: "https://picsum.photos/400/200?random=2",
     url: "https://itch.io/embed/261560",
     type: "embed"
   },
   {
     title: "Dungeon RPG",
     category: "rpg",
-    thumb: "https://img.itch.zone/aW1nLzE2NDg5NzYucG5n/original/def.png",
+    thumb: "https://picsum.photos/400/200?random=3",
     url: "https://itch.io/embed/307222",
     type: "embed"
   }
@@ -130,7 +132,7 @@ function renderSection(title, games){
       <img src="${game.thumb}">
       <span class="category">${game.category}</span>
       <h3>${game.title} ${isFav}</h3>
-    <button class="btn" onclick="playGame(${JSON.stringify(game)})">▶ Play</button>
+    <button class="btn" onclick="playGame(${index})">▶ Play</button>
       <button class="btn" onclick="toggleFav(${JSON.stringify(game)})">⭐ Fav</button>
     `;
     grid.appendChild(card);
