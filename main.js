@@ -89,6 +89,20 @@ const gamesData = [
     url: "https://itch.io/embed/1031090",
     type: "embed"
   }
+  {
+    title: "2048 Game",
+    category: "strategy",
+    thumb: "https://picsum.photos/400/200?random=1",
+    url: "https://play2048.co/",
+    type: "embed"
+  },
+  {
+    title: "Tetris",
+    category: "strategy",
+    thumb: "https://picsum.photos/400/200?random=2",
+    url: "https://tetris.com/play-tetris",
+    type: "external"
+  }
 ];
 // Render sections
 
