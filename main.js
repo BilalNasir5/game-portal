@@ -62,11 +62,7 @@ function playGame(url){
 }
 window.playGame = playGame;
 
-//function closePlayer(){
-  document.getElementById("player").style.display="none";
-  document.getElementById("frame").src="";
-}
-//window.closePlayer = closePlayer;
+
 
 const gamesData = [
   {
