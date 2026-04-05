@@ -141,7 +141,7 @@ function renderSection(title, games){
       <img src="${game.thumb}">
       <span class="category">${game.category}</span>
       <h3>${game.title} ${isFav}</h3>
-      <button class="btn" onclick="playGame('${game.url}')">▶ Play</button>
+    <button class="btn" onclick="window.open('${game.url}', '_blank')">▶ Play</button>
       <button class="btn" onclick="toggleFav(${JSON.stringify(game)})">⭐ Fav</button>
     `;
     grid.appendChild(card);
