@@ -67,28 +67,26 @@ function playGame(index){
 }
 window.playGame = playGame;
 
-
-
 const gamesData = [
   {
-    title: "Space Shooter",
-    category: "shooter",
-    thumb: "https://picsum.photos/400/200?random=1",
-    url: "https://itch.io/embed/182406",
-    type: "embed"
-  },
-  {
-    title: "Pixel Racing",
-    category: "racing",
-    thumb: "https://picsum.photos/400/200?random=2",
-    url: "https://itch.io/embed/261560",
-    type: "embed"
-  },
-  {
-    title: "Dungeon RPG",
+    title: "Friday Night Funkin",
     category: "rpg",
-    thumb: "https://picsum.photos/400/200?random=3",
-    url: "https://itch.io/embed/307222",
+    thumb: "https://img.itch.zone/aW1nLzQyOTY1NDYucG5n/original/8Q%2B6FZ.png",
+    url: "https://itch.io/embed/833937",
+    type: "embed"
+  },
+  {
+    title: "Among Us (Fan Version)",
+    category: "strategy",
+    thumb: "https://img.itch.zone/aW1nLzM0Njk1NjkucG5n/original/abc.png",
+    url: "https://itch.io/embed/524904",
+    type: "embed"
+  },
+  {
+    title: "Super Platformer",
+    category: "shooter",
+    thumb: "https://picsum.photos/400/200?random=5",
+    url: "https://itch.io/embed/1031090",
     type: "embed"
   }
 ];
