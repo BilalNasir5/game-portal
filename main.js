@@ -66,27 +66,7 @@ function playGame(index){
 window.playGame = playGame;
 
 const gamesData = [
-  {
-    title: "Friday Night Funkin",
-    category: "rpg",
-    thumb: "https://img.itch.zone/aW1nLzQyOTY1NDYucG5n/original/8Q%2B6FZ.png",
-    url: "https://itch.io/embed/622466",
-    type: "embed"
-  },
-  {
-    title: "Among Us (Fan Version)",
-    category: "strategy",
-    thumb: "https://img.itch.zone/aW1nLzM0Njk1NjkucG5n/original/abc.png",
-    url: "https://itch.io/embed/524904",
-    type: "embed"
-  },
-  {
-    title: "Super Platformer",
-    category: "shooter",
-    thumb: "https://picsum.photos/400/200?random=5",
-    url: "https://itch.io/embed/1031090",
-    type: "embed"
-  },
+ 
   {
     title: "Crossword-Puzzle-Game",
     category: "strategy",
